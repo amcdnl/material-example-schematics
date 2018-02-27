@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs/Observable';
+import { BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isHandset: boolean;
-  constructor(breakpointObserver: BreakpointObserver) {
-    this.isHandset = breakpointObserver.isMatched(Breakpoints.Handset);
-  }
+  _isHandset: Observable<BreakpointState> = this._breakpointObserver.observe(Breakpoints.Handset);
+  constructor(private _breakpointObserver: BreakpointObserver) {}
 }
