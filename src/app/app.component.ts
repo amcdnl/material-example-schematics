@@ -10,8 +10,8 @@ import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/l
 export class AppComponent {
   /** Based on the screen size, switch to one column per row or not */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map((match) => {
-      if (match) {
+    map(({ matches }) => {
+      if (matches) {
         return [
           { title: 'Card 1', cols: 2, rows: 1 },
           { title: 'Card 2', cols: 2, rows: 1 },
