@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
